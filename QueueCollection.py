@@ -12,9 +12,19 @@ class QueueCollection:
         self.__data.append(e) #se agrega elemento a la cola
         self.__data.sort(reverse=True) # se orden a de mayor a menor (mayor en el principio de la cola)
     
-    # def remove(self, e):
+    def remove(self, e):
+        if (e in self.__data):
+            self.__data.remove(e)
+            return (e)
+        else:
+            return None
         
-    # def find(self, e):
+    def find(self, e):
+        if (e in self.__data):
+            return (e)
+        else:
+            return None
+    
         
     def printQueue(self):
         print(self.__data)
