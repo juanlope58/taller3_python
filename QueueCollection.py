@@ -26,12 +26,20 @@ class QueueCollection():
     def remove(self):
         return self.__data.dequeue()
         
-    # def find(self, e):
-    #     if (e in self.__data):
-    #         return (e)
-    #     else:
-    #         return None
-    
+    def find(self, e):
+        cont=0
+        vec=[]
+        for i in range(self.__data.size()):     # saco los datos de la cola para buscar el dato pedido
+            vec.append(self.__data.dequeue())
+            if vec[i] == e :
+                cont+=1
+        for i in range(len(vec)):
+            self.add(vec[i])            # meto los datos de nuevo a la cola
+        if cont==0:
+            return None
+        else:
+            return (str(e) + " se encuentra un numero de veces de: " + str(cont))   # retorno el dato pedido y el numero de veces que se encontró en la cola
+            
         
     def printQueue(self):
         vec=[]

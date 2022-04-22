@@ -28,10 +28,18 @@ class StackCollection():
             return None
     
     def find(self, e):
-        if (e in self.__data):
-            return(e)
-        else: 
+        cont=0
+        vec=[]
+        for i in range(self.__data.size()):         # saco los datos de la pila para poder buscar el que me piden
+            vec.append(self.__data.pop())
+            if vec[i]==e :
+                cont+=1
+        for i in range(len(vec)):               #busco cuantas veces está
+            self.add(vec[i])
+        if cont == 0:
             return None
+        else:
+            return(str("el dato "+str(e)+" se encuentra un numero de veces de: "+str(cont)))
         
     def printStack(self):
         vec=[]
