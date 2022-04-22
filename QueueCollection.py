@@ -1,31 +1,27 @@
-from pickle import TRUE
+import Queue as qu
 
-
-class QueueCollection:
+class QueueCollection():
     def __init__(self):
-        self.__data = []
-    
-    def QueueCollection():
-        pass
+        self.__data = qu.Queue()
+        self.temp=""
     
     def add(self, e):
-        self.__data.append(e) #se agrega elemento a la cola
-        self.__data.sort(reverse=True) # se orden a de mayor a menor (mayor en el principio de la cola)
+        self.__data.enqueue(e) #se agrega elemento a la cola
     
-    def remove(self, e):
-        if (e in self.__data):
-            self.__data.remove(e)
-            return (e)
-        else:
-            return None
+    def remove(self):
+        return self.__data.dequeue()
         
-    def find(self, e):
-        if (e in self.__data):
-            return (e)
-        else:
-            return None
+    # def find(self, e):
+    #     if (e in self.__data):
+    #         return (e)
+    #     else:
+    #         return None
     
         
     def printQueue(self):
-        print(self.__data)
+        return(self.__data.size())
+        
+        # for i in self.__data.size:
+        #     self.temp = self.__data.dequeue()
+        #     print(self.temp)
 
