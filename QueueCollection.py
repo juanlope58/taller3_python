@@ -4,7 +4,6 @@ class QueueCollection():
     def __init__(self):
         self.__data = qu.Queue()
         
-    
     def add(self, e):
         if self.__data.isEmpty():
             self.__data.enqueue(e) # si está vacío agrego a la cola
@@ -35,8 +34,9 @@ class QueueCollection():
     
         
     def printQueue(self):
-        return(self.__data.size())
-        
-        # for i in self.__data.size:
-        #     self.temp = self.__data.dequeue()
-        #     print(self.temp)
+        vec=[]
+        for i in range(self.__data.size()):
+            vec.append(self.__data.dequeue()) #sacando los valores de la cola para imprimirlos
+        for i in range(len(vec)):
+            self.add(vec[i])        #devolviendo datos a la cola
+        print(vec)

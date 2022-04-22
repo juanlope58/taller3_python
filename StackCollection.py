@@ -13,7 +13,7 @@ class StackCollection():
                 vec.append(self.__data.pop())       # Sacando los valores de la pila a un vector
             for j in range(len(vec)-1):       # Ordenando los valores del vector
                 for i in range(len(vec)-1):
-                    if (vec[i]>vec[i+1]):
+                    if (vec[i]<vec[i+1]):
                         aux=vec[i]
                         vec[i]=vec[i+1]
                         vec[i+1]=aux
@@ -34,5 +34,10 @@ class StackCollection():
             return None
         
     def printStack(self):
-        print(self.__data)
+        vec=[]
+        for i in range(self.__data.size()):  # saco los datos de la pila para poder imprimirlos
+            vec.append(self.__data.pop())
+        for i in range(len(vec)):       # retorno los datos a la pila para no alterarla
+            self.add(vec[i])
+        print(vec)                      #imprimo los datos
         
