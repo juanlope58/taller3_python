@@ -1,3 +1,4 @@
+from itertools import count
 import Queue as qu
 
 class QueueCollection():
@@ -23,8 +24,21 @@ class QueueCollection():
                 self.__data.enqueue(vec[i])            
             
     
-    def remove(self):
-        return self.__data.dequeue()
+    def remove(self,e):
+        vec=[]
+        vec2=[]
+        indicador=False
+        for i in range(self.__data.size()):
+            vec.append(self.__data.dequeue())
+        for i in range(len(vec)):
+            if vec[i]==e:               # elimino todos los datos que coinciden con el dato pedido
+                indicador=True    
+            else:
+                self.add(vec[i])    # agrego los datos a la cola omitiendo el dato eliminado
+        if indicador:
+            return(e)                # retorno los datos eliminados
+        else:
+            return None
         
     def find(self, e):
         cont=0

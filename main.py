@@ -13,7 +13,7 @@ myQueue.add(1)
 myQueue.printQueue()
 print(myQueue.find(5))
 myQueue.printQueue()
-# print(myQueue.remove(3))
+print(myQueue.remove(3))
 myQueue.printQueue()
 
 # #Stack
@@ -26,7 +26,7 @@ myStack.add(9)
 myStack.add(1)
 
 myStack.printStack()
-# print(myStack.remove(3))
+print(myStack.remove(3))
 myStack.printStack()
 print(myStack.find(3))
 myStack.printStack()

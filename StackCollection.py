@@ -21,9 +21,17 @@ class StackCollection():
                 self.__data.push(vec[i]) # devolviendo los valores ordenados a la pila
         
     def remove(self, e):
-        if (e in self.__data):
-            self.__data.remove(e)
-            return (e)
+        vec=[]
+        indicador=False
+        for i in range(self.__data.size()): # saco los datos de la pila para eliminar el dato pedido
+            vec.append(self.__data.pop())
+        for i in range(len(vec)):
+            if vec[i]==e:               #omito los datos iguales al que se pide eliminar
+                indicador=True
+            else:
+                self.add(vec[i])             # agrego los elementos a la pila sin meter los datos eliminados
+        if indicador:
+            return(e)
         else:
             return None
     
